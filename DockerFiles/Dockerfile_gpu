@@ -1,0 +1,70 @@
+## Dockerfile to build tensorflow, keras and python from sources with CUDA support
+FROM nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04
+
+MAINTAINER Taimoor Shakeel <sheikh@tu.ac.kr>
+
+ARG THEANO_VERSION=rel-0.8.2
+ARG TENSORFLOW_VERSION=1.12.0
+ARG KERAS_VERSION=2.2.4
+ARG PILLOW_VERSION=7.2.0
+ARG PANDAS_VERSION=1.12.2
+ARG TORNADO_VERSION=5.1.1
+ARG DECORATOR_VERSION=4.4.0 
+
+# Install some dependencies
+RUN apt-get update && apt-get install -y \
+		bc build-essential cmake curl g++ gfortran git libffi-dev libtbb2 libfreetype6-dev libhdf5-dev libjpeg-dev liblcms2-dev \
+		libopenblas-dev liblapack-dev libpng12-dev libssl-dev libtiff5-dev libwebp-dev libzmq3-dev nano pkg-config python-dev \
+		software-properties-common vim wget zlib1g-dev qt5-default libvtk6-dev libpng-dev libjasper-dev libopenexr-dev \ 
+		libgdal-dev libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtiff-dev libpq-dev libglew-dev\
+		libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libavutil-dev\
+		libv4l-dev libxine2-dev libtbb-dev libeigen3-dev python-tk python-numpy python3-dev python3-tk python3-pip\
+		ant default-jdk doxygen python-nose python-sympy python-setuptools libmysqlclient-dev libpostproc-dev libgtk2.0-dev\
+		rsync unzip \		
+		&& \
+		apt-get clean && \
+		apt-get autoremove && \
+		rm -rf /var/lib/apt/lists/* && \
+# Link BLAS library to use OpenBLAS using the alternatives mechanism (https://www.scipy.org/scipylib/building/linux.html#debian-ubuntu)
+	update-alternatives --set libblas.so.3 /usr/lib/openblas-base/libblas.so.3
+
+# Install pip
+RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
+	python get-pip.py && \
+	rm get-pip.py
+
+RUN apt-get update && apt-get install -y \ 
+  && cd /usr/local/bin \
+  && ln -s /usr/bin/python3 python \
+  && pip3 install --upgrade pip
+
+RUN apt-get --quiet --yes remove python3-numpy
+RUN pip3 install --upgrade pip
+
+# Install other useful Python packages using pip
+RUN pip3 --no-cache-dir install \
+	tornado==${TORNADO_VERSION} jupyter requests matplotlib numpy h5py scipy scikit-learn scikit-image py3nvml six sphinx \ 	
+	wheel decorator==${DECORATOR_VERSION} pandas==${PANDAS_VERSION} path.py Pillow==${PILLOW_VERSION} pygments hdf5storage \
+	zmq pyopenssl ndg-httpsclient pyasn1
+
+# Install tensorflow
+RUN pip --no-cache-dir install --ignore-installed --upgrade tensorflow-gpu==${TENSORFLOW_VERSION} setuptools progressbar2
+
+# Install Theano and set up Theano config (.theanorc) OpenBLAS
+RUN pip3 --no-cache-dir install git+git://github.com/Theano/Theano.git@${THEANO_VERSION} && \
+	\
+	echo "[global]\ndevice=cuda\nfloatX=float32\nmode=FAST_RUN \
+		\n[lib]\ncnmem=0.95 \
+		\n[nvcc]\nfastmath=True \
+		\n[blas]\nldflag = -L/usr/lib/openblas-base -lopenblas \
+		\n[DebugMode]\ncheck_finite=1" \
+	> /root/.theanorc
+
+# Install Keras
+RUN pip3 --no-cache-dir install git+git://github.com/fchollet/keras.git@${KERAS_VERSION}
+
+# Set the library path to use cuda and cupti
+ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+
+WORKDIR "/root"
+CMD ["/bin/bash"]

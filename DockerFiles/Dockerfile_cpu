@@ -1,0 +1,50 @@
+## Dockerfile to build tensorflow, keras and python from sources
+FROM ubuntu:16.04
+
+MAINTAINER Taimoor Shakeel <sheikh@tu.ac.kr>
+
+ARG THEANO_VERSION=rel-0.8.2
+ARG TENSORFLOW_VERSION=1.12.0
+ARG KERAS_VERSION=2.2.4
+ARG PILLOW_VERSION=7.2.0
+ARG PANDAS_VERSION=1.12.2
+ARG TORNADO_VERSION=5.1.1
+ARG DECORATOR_VERSION=4.4.0 
+
+RUN apt-get update && apt-get install -y \
+    bc build-essential cmake git wget vim unzip yasm pkg-config curl qt5-default libopenblas-dev python3-tk python3-numpy \
+    python3-dev python3-pip ant python-nose python-sympy python-setuptools unzip \		
+    && cd /usr/local/bin \
+    && ln -s /usr/bin/python3 python \
+    && apt-get clean && \
+    apt-get autoremove && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+# Link BLAS library to use OpenBLAS using the alternatives mechanism (https://www.scipy.org/scipylib/building/linux.html#debian-ubuntu)
+	update-alternatives --set libblas.so.3 /usr/lib/openblas-base/libblas.so.3
+
+# Install pip
+RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
+	python get-pip.py && \
+	rm get-pip.py
+
+# Install other useful Python packages using pip
+RUN pip --no-cache-dir install \
+	tornado==${TORNADO_VERSION} jupyter requests matplotlib numpy h5py scipy scikit-learn scikit-image pygments path.py six sphinx \
+	decorator==${DECORATOR_VERSION}	pandas==${PANDAS_VERSION} Pillow==${PILLOW_VERSION} wheel zmq pyopenssl
+
+# Install TensorFlow
+RUN pip --no-cache-dir install --ignore-installed --upgrade tensorflow==${TENSORFLOW_VERSION} setuptools
+
+# Install Theano and set up Theano config (.theanorc) OpenBLAS and Keras
+RUN pip3 --no-cache-dir install git+git://github.com/fchollet/keras.git@${KERAS_VERSION} \
+        git+git://github.com/Theano/Theano.git@${THEANO_VERSION} && \
+	\
+	echo "[global]\ndevice=cpu\nfloatX=float32\nmode=FAST_RUN \
+		\n[lib]\ncnmem=0.95 \
+		\n[nvcc]\nfastmath=True \
+		\n[blas]\nldflag = -L/usr/lib/openblas-base -lopenblas \
+		\n[DebugMode]\ncheck_finite=1" \
+	> /root/.theanorc
+
+WORKDIR "/root"
+CMD ["/bin/bash"]
