@@ -43,7 +43,7 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 	**(Stage-A): WSI Processing Module Scipts**
 
 	1) WSI-XML-Read-Write
-	2) Creating PatchesWithMasks 
+	2) Creating Patches With Masks 
 
 	**(Stage-B): Patch Retrieval Module Scipts**
 	
