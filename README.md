@@ -8,7 +8,7 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 	 </p>
 	<br />
 
-	<img src="/Images/Idea_N.PNG" width="800">
+	<img src="/Images/Idea_N.PNG" width="600">
 	<br />
 
 2. ***Dataset***
