@@ -15,7 +15,7 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 	We used the following public WSI dataset as reference standards for training and evaluating our models.
 
-	[MoNuSAC2020](https://monusac-2020.grand-challenge.org/)
+	Link: [MoNuSAC2020](https://monusac-2020.grand-challenge.org/)
 
 	<img src="/Images/Dataset.PNG" width="300">
 	<br />	<br />
