@@ -147,7 +147,7 @@ Each Jupyter notebook includes
 To evaluate the performance results faster we recommend to use docker files. We used Quadro RTX 5000 16GB. RAM 128GB
 
 
-# Citation:
+<!-- # Citation:
 
 If you find this code useful in your research, please consider citing:
 
@@ -163,4 +163,4 @@ URL = {https://},
 ISSN = {},
 DOI = {}
 }
-
+ -->
