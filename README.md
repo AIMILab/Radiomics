@@ -141,8 +141,8 @@ Engineering_): [Paper](https://)
 
 Each Jupyter notebook includes 
 
-1) All of the above models (cases).
-2) Our experimental strategy to segment variants of nuclei for WSI dataset.
+1) All of the above models (each case).
+2) Our experimental strategy to segment variants of nuclei on WSI dataset.
 3) We also added the confusion matrices and visualization analysis for each strategy.
 
 To evaluate the performance results faster we recommend to use docker files. We used Quadro RTX 5000 16GB. RAM 128GB
