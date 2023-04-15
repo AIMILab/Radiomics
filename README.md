@@ -1,6 +1,7 @@
 # Paper Information
 
-Repository of our following paper **Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features** (_Computerized Medical Imaging and Graphics_): [Paper](https://)
+Repository of our following paper **Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features** (_IEEE Transactions on Biomedical
+Engineering_): [Paper](https://)
 
 1. ***Abstract***
 	<p align="justify"> 	
@@ -105,17 +106,17 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 	- Built the image from scratch (Docker.cpu file)
 
-	  sudo docker build -t cmig_2023:cmig_2023-cpu -f DockerFiles/Dockerfile_cpu .
+	  sudo docker build -t TBME_2023:TBME_2023-cpu -f DockerFiles/Dockerfile_cpu .
 
-	  sudo docker run -it -v "$PWD"/Scripts:/root cmig_2023:cmig_2023-cpu
+	  sudo docker run -it -v "$PWD"/Scripts:/root TBME_2023:TBME_2023-cpu
 
 	B. With CUDA Support:
 
 	- Built the image from scratch (Docker.gpu file)
 
-	  sudo docker build -t cmig_2023:cmig_2023-gpu -f DockerFiles/Dockerfile_gpu .
+	  sudo docker build -t TBME_2023:TBME_2023-gpu -f DockerFiles/Dockerfile_gpu .
 
-	  sudo nvidia-docker run -it -v "$PWD"/Scripts:/root cmig_2023:cmig_2023-gpu
+	  sudo nvidia-docker run -it -v "$PWD"/Scripts:/root TBME_2023:TBME_2023-gpu
 	<br />
 
 7. ***Results:***
@@ -154,7 +155,7 @@ If you find this code useful in your research, please consider citing:
 @article{,
 AUTHOR = {Sheikh, Taimoor Shakeel and Cho, Migyung},
 TITLE = {Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features},
-JOURNAL = {CMIG},
+JOURNAL = {TBME},
 VOLUME = {},
 YEAR = {},
 NUMBER = {},
