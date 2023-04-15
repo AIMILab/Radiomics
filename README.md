@@ -122,13 +122,13 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 	**A. Classifier Results**
 
-	<img src="/Images/Classifier.PNG" width="500">
+	<img src="/Images/Classifier.jpg" width="500">
 	<br />
 	<br />
 
 	**B. Segmentation Results & Visualization**
 
-	<img src="/Images/Segmentation Reults 1.PNG" width="800">
+	<img src="/Images/Segmentation Reults 1.jpg" width="800">
 	<br />
 	<br />
 	<img src="/Images/Segmentation Reults 2.PNG" width="700">
