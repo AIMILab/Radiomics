@@ -128,7 +128,7 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 	**B. Segmentation Results & Visualization**
 
-	<img src="/Images/Segmentation Reults 1.jpg" width="800">
+	<img src="/Images/Segmentation Reults 1.jpg" width="700">
 	<br />
 	<br />
 	<img src="/Images/Segmentation Reults 2.PNG" width="700">
