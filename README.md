@@ -1,7 +1,6 @@
 # Paper Information
 
-Repository of our following paper **Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features** (_IEEE Transactions on Biomedical
-Engineering_): [Paper](https://)
+Repository of our following paper **Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features** (PLOS ONE): [Paper](https://)
 
 1. ***Abstract***
 	<p align="justify"> 	
@@ -106,17 +105,17 @@ Engineering_): [Paper](https://)
 
 	- Built the image from scratch (Docker.cpu file)
 
-	  sudo docker build -t TBME_2023:TBME_2023-cpu -f DockerFiles/Dockerfile_cpu .
+	  sudo docker build -t PLOS-ONE_2023:PLOS-ONE_2023-cpu -f DockerFiles/Dockerfile_cpu .
 
-	  sudo docker run -it -v "$PWD"/Scripts:/root TBME_2023:TBME_2023-cpu
+	  sudo docker run -it -v "$PWD"/Scripts:/root PLOS-ONE_2023:PLOS-ONE_2023-cpu
 
 	B. With CUDA Support:
 
 	- Built the image from scratch (Docker.gpu file)
 
-	  sudo docker build -t TBME_2023:TBME_2023-gpu -f DockerFiles/Dockerfile_gpu .
+	  sudo docker build -t PLOS-ONE_2023:PLOS-ONE_2023-gpu -f DockerFiles/Dockerfile_gpu .
 
-	  sudo nvidia-docker run -it -v "$PWD"/Scripts:/root TBME_2023:TBME_2023-gpu
+	  sudo nvidia-docker run -it -v "$PWD"/Scripts:/root PLOS-ONE_2023:PLOS-ONE_2023-gpu
 	<br />
 
 7. ***Results:***
@@ -155,7 +154,7 @@ If you find this code useful in your research, please consider citing:
 @article{,
 AUTHOR = {Sheikh, Taimoor Shakeel and Cho, Migyung},
 TITLE = {Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features},
-JOURNAL = {TBME},
+JOURNAL = {PLOS ONE},
 VOLUME = {},
 YEAR = {},
 NUMBER = {},
