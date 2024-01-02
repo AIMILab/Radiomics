@@ -96,8 +96,8 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 	1) U-Net
 	2) Seg-Net
-        3) MultiResU-Net
-        4) Refine-Net
+	3) MultiResU-Net
+	4) Refine-Net
 
 	<br />
 
