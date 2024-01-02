@@ -17,10 +17,10 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 	Link: [MoNuSAC2020](https://monusac-2020.grand-challenge.org/)
 
-	<img src="/Images/Dataset.PNG" width="300">
+	<img src="/Images/Dataset.png" width="300">
 	<br />	<br />
 
-	<img src="/Images/Dataset_2.PNG" width="300">
+	<img src="/Images/Dataset_2.png" width="300">
 	<br />	<br />
 
 3. ***Environment Setup***
@@ -145,13 +145,13 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 ***!! NOTE: !!*** 
 
-Each Jupyter notebook includes 
+Each Jupyter Notebook includes 
 
 1) All of the above models (each case).
-2) Our experimental strategy to segment variants of nuclei on WSI dataset.
+2) Our experimental strategy is to segment variants of nuclei on the WSI dataset.
 3) We also added the confusion matrices and visualization analysis for each strategy.
 
-To evaluate the performance results faster we recommend to use docker files. We used Quadro RTX 5000 16GB. RAM 128GB
+To evaluate the performance results faster we recommend using docker files. We used Quadro RTX 5000 16GB. RAM 128GB
 
 
 <!-- # Citation:
