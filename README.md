@@ -20,9 +20,12 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 	<img src="/Images/Dataset.PNG" width="300">
 	<br />	<br />
 
+	<img src="/Images/Dataset_2.PNG" width="300">
+	<br />	<br />
+
 3. ***Environment Setup***
 
-	We used python with environment 3.7.x ++ and install necessary packages and dependencies using dockerfile:
+	We used Python with environment 3.7.x ++ and install necessary packages and dependencies using dockerfile:
 	- Numpy
 	- Tensorflow 
 	- Keras
