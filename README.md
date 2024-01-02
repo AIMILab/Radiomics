@@ -1,10 +1,10 @@
 # Paper Information
 
-Repository of our following paper **Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features** (PLOS ONE): [Paper](https://)
+Repository of our following paper **Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features** (Bioengineering): [Paper](https://)
 
 1. ***Abstract***
 	<p align="justify"> 	
-	The histopathological segmentation of nuclear types is a challenging task because nuclei exhibit distinct morphologies, textures, and staining characteristics. Accurate segmentation is critical because it affects the diagnostic workflow for patient assessment. In this study, a framework was proposed for segmenting various types of nuclei from different body organs. The proposed framework improved the segmentation performance for each nuclear type using radiomics. First, we used distinct radiomic features to extract and analyze quantitative information about each type of nucleus and subsequently trained various classifiers based on the best input sub-features of each radiomic feature selected by a LASSO operator. Second, we inputted the outputs of the best classifier to various segmentation models to learn the variants of nuclei. Using the MoNuSAC2020 dataset, we achieved state-of-the-art segmentation performance for each category of nuclei type despite complexity, overlapping, and obscure regions. The generalized adaptability of the proposed framework was verified by the consistent performance obtained in whole slide images of different body organs and radiomic features.
+	The histopathological segmentation of nuclear types is a challenging task because nuclei exhibit distinct morphologies, textures, and staining characteristics. Accurate segmentation is critical because it affects the diagnostic workflow for patient assessment. In this study, a framework was proposed for segmenting various types of nuclei from different body organs. The proposed framework improved the segmentation performance for each nuclear type using radiomics. First, we used distinct radiomic features to extract and analyze quantitative information about each type of nucleus and subsequently trained various classifiers based on the best input sub-features of each radiomic feature selected by a LASSO operator. Second, we inputted the outputs of the best classifier to various segmentation models to learn the variants of nuclei. Using the MoNuSAC2020 dataset, we achieved state-of-the art segmentation performance for each category of nuclei type despite the complexity, overlapping, and obscure regions. The generalized adaptability of the proposed framework was verified by the consistent performance obtained in whole slide images of different body organs and radiomic features.
 	 </p>
 	<br />
 
@@ -89,10 +89,13 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 	**(Stage-C): Segmentation Module**
 	
-	We used the following two different models.
+	We used the following four different models.
 
 	1) U-Net
 	2) Seg-Net
+        3) MultiResU-Net
+        4) Refine-Net
+
 	<br />
 
 6. ***Commands To Use Docker Files:***
@@ -105,20 +108,20 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 	- Built the image from scratch (Docker.cpu file)
 
-	  sudo docker build -t PLOS-ONE_2023:PLOS-ONE_2023-cpu -f DockerFiles/Dockerfile_cpu .
+	  sudo docker build -t Radiomic_2024:Radiomic_2024-cpu -f DockerFiles/Dockerfile_cpu .
 
-	  sudo docker run -it -v "$PWD"/Scripts:/root PLOS-ONE_2023:PLOS-ONE_2023-cpu
+	  sudo docker run -it -v "$PWD"/Scripts:/root Radiomic_2023:Radiomic_2024-cpu
 
 	B. With CUDA Support:
 
 	- Built the image from scratch (Docker.gpu file)
 
-	  sudo docker build -t PLOS-ONE_2023:PLOS-ONE_2023-gpu -f DockerFiles/Dockerfile_gpu .
+	  sudo docker build -t Radiomic_2024:Radiomic_2024-gpu -f DockerFiles/Dockerfile_gpu .
 
-	  sudo nvidia-docker run -it -v "$PWD"/Scripts:/root PLOS-ONE_2023:PLOS-ONE_2023-gpu
+	  sudo nvidia-docker run -it -v "$PWD"/Scripts:/root Radiomic_2024:Radiomic_2024-gpu
 	<br />
 
-7. ***Results:***
+<!-- 7. ***Results:***
 
 	**A. Classifier Results**
 
@@ -134,7 +137,8 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 	<img src="/Images/Segmentation Reults 2.PNG" width="700">
 
 	<br />
-	<br />
+	<br /> 
+ -->
 
 ***!! NOTE: !!*** 
 
@@ -154,7 +158,7 @@ If you find this code useful in your research, please consider citing:
 @article{,
 AUTHOR = {Sheikh, Taimoor Shakeel and Cho, Migyung},
 TITLE = {Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features},
-JOURNAL = {PLOS ONE},
+JOURNAL = {Bioengineering},
 VOLUME = {},
 YEAR = {},
 NUMBER = {},
