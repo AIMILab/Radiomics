@@ -17,10 +17,10 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 	Link: [MoNuSAC2020](https://monusac-2020.grand-challenge.org/)
 
-	<img src="/Images/Dataset.png" width="300">
+	<img src="/Images/Dataset.png" width="500">
 	<br />	<br />
 
-	<img src="/Images/Dataset_2.png" width="300">
+	<img src="/Images/Dataset_2.png" width="500">
 	<br />	<br />
 
 3. ***Environment Setup***
