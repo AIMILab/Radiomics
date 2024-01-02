@@ -4,7 +4,7 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 1. ***Abstract***
 	<p align="justify"> 	
-	The histopathological segmentation of nuclear types is a challenging task because nuclei exhibit distinct morphologies, textures, and staining characteristics. Accurate segmentation is critical because it affects the diagnostic workflow for patient assessment. In this study, a framework was proposed for segmenting various types of nuclei from different body organs. The proposed framework improved the segmentation performance for each nuclear type using radiomics. First, we used distinct radiomic features to extract and analyze quantitative information about each type of nucleus and subsequently trained various classifiers based on the best input sub-features of each radiomic feature selected by a LASSO operator. Second, we inputted the outputs of the best classifier to various segmentation models to learn the variants of nuclei. Using the MoNuSAC2020 dataset, we achieved state-of-the art segmentation performance for each category of nuclei type despite the complexity, overlapping, and obscure regions. The generalized adaptability of the proposed framework was verified by the consistent performance obtained in whole slide images of different body organs and radiomic features.
+	The histopathological segmentation of nuclear types is a challenging task because nuclei exhibit distinct morphologies, textures, and staining characteristics. Accurate segmentation is critical because it affects the diagnostic workflow for patient assessment. In this study, a framework was proposed for segmenting various types of nuclei from different body organs. The proposed framework improved the segmentation performance for each nuclear type using radiomics. First, we used distinct radiomic features to extract and analyze quantitative information about each type of nucleus and subsequently trained various classifiers based on the best input sub-features of each radiomic feature selected by a LASSO operator. Second, we inputted the outputs of the best classifier to various segmentation models to learn the variants of nuclei. Using the MoNuSAC2020 dataset, we achieved state-of-the-art segmentation performance for each category of nuclei type despite the complexity, overlapping, and obscure regions. The generalized adaptability of the proposed framework was verified by the consistent performance obtained in whole slide images of different body organs and radiomic features.
 	 </p>
 	<br />
 
@@ -60,7 +60,7 @@ Repository of our following paper **Segmentation of Variants of Nuclei on Whole 
 
 5. ***Basic Experimental Information:***
 
-	We used four radiomics features to find different charactersitics about each nuclei type from WSIs which help our model to learn and segment the input samples more accurately with substantial information.
+	We used four radiomics features to find different characteristics about each nuclei type from WSIs which help our model to learn and segment the input samples more accurately with substantial information.
 
 	- GLCM
 	- GLDM
