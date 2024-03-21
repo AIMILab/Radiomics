@@ -156,14 +156,14 @@ To evaluate the performance results faster we recommend using docker files. We u
 If you find this code useful in your research, please consider citing:
 
 @article{sheikh2024segmentation,
-  title={Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features},
-  author={Sheikh, Taimoor Shakeel and Cho, Migyung},
-  journal={Bioengineering},
-  volume={11},
-  number={3},
-  pages={252},
-  year={2024},
-  publisher={MDPI}
+title={Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features},
+author={Sheikh, Taimoor Shakeel and Cho, Migyung},
+journal={Bioengineering},
+volume={11},
+number={3},
+pages={252},
+year={2024},
+publisher={MDPI}
 }
 
 <!-- # Citation:
