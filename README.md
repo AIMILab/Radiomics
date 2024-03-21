@@ -1,10 +1,10 @@
 # Paper Information
 
-Repository of our following paper **Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features** (Bioengineering): [Paper](https://)
+Repository of our following paper **Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features** (Bioengineering): [Paper](https://www.mdpi.com/2306-5354/11/3/252)
 
 1. ***Abstract***
 	<p align="justify"> 	
-	The histopathological segmentation of nuclear types is a challenging task because nuclei exhibit distinct morphologies, textures, and staining characteristics. Accurate segmentation is critical because it affects the diagnostic workflow for patient assessment. In this study, a framework was proposed for segmenting various types of nuclei from different body organs. The proposed framework improved the segmentation performance for each nuclear type using radiomics. First, we used distinct radiomic features to extract and analyze quantitative information about each type of nucleus and subsequently trained various classifiers based on the best input sub-features of each radiomic feature selected by a LASSO operator. Second, we inputted the outputs of the best classifier to various segmentation models to learn the variants of nuclei. Using the MoNuSAC2020 dataset, we achieved state-of-the-art segmentation performance for each category of nuclei type despite the complexity, overlapping, and obscure regions. The generalized adaptability of the proposed framework was verified by the consistent performance obtained in whole slide images of different body organs and radiomic features.
+	The histopathological segmentation of nuclear types is a challenging task because nuclei exhibit distinct morphologies, textures, and staining characteristics. Accurate segmentation is critical because it affects the diagnostic workflow for patient assessment. In this study, a framework was proposed for segmenting various types of nuclei from different organs of the body. The proposed framework improved the segmentation performance for each nuclear type using radiomics. First, we used distinct radiomic features to extract and analyze quantitative information about each type of nucleus and subsequently trained various classifiers based on the best input sub-features of each radiomic feature selected by a LASSO operator. Second, we inputted the outputs of the best classifier to various segmentation models to learn the variants of nuclei. Using the MoNuSAC2020 dataset, we achieved state-of-the-art segmentation performance for each category of nuclei type despite the complexity, overlapping, and obscure regions. The generalized adaptability of the proposed framework was verified by the consistent performance obtained in whole slide images of different organs of the body and radiomic features.
 	 </p>
 	<br />
 
@@ -153,6 +153,18 @@ Each Jupyter Notebook includes
 
 To evaluate the performance results faster we recommend using docker files. We used Quadro RTX 5000 16GB. RAM 128GB
 
+If you find this code useful in your research, please consider citing:
+
+@article{sheikh2024segmentation,
+  title={Segmentation of Variants of Nuclei on Whole Slide Images by Using Radiomic Features},
+  author={Sheikh, Taimoor Shakeel and Cho, Migyung},
+  journal={Bioengineering},
+  volume={11},
+  number={3},
+  pages={252},
+  year={2024},
+  publisher={MDPI}
+}
 
 <!-- # Citation:
 
